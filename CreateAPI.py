@@ -79,6 +79,7 @@ def home():
     x_api_key = request.headers.get('X-Api-Key')
     print(f"Received API key: {x_api_key}")  # Add this line for debugging
     return f"Hello, Flask! x_api_key: {x_api_key}"
+#Deploying code on AWS
 
 
 @app.route('/get_answer', methods=['POST'])
