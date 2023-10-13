@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import openai
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Chroma, Pinecone
+from langchain.vectorstores import Chroma
 from langchain import OpenAI
 from langchain.chains import RetrievalQA
 from langchain.document_loaders import PyPDFLoader
@@ -40,9 +40,6 @@ embeddings = OpenAIEmbeddings(openai_api_key=os.getenv('OPENAI_API_KEY'))
 
 
 db = Chroma.from_documents(texts, OpenAIEmbeddings())
-
-
-# app.run(host='0.0.0.0', port=6000, debug=True)
 
 @app.route('/')
 def home():
@@ -85,8 +82,7 @@ def get_answer():
 
 
 def generate_answer(question):
-    # Replace this with your logic to retrieve an answer based on the generated question
-    # For demonstration purposes, a placeholder answer is returned here
+   
     return "This is a placeholder answer."
 
 
