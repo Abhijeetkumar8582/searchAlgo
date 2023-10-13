@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 load_dotenv('file.env')
 
-loader = PyPDFLoader("Abhijeet_Kumar.pdf")
+loader = PyPDFLoader("Abhijeet_Kumar_CV.pdf")
 pages = loader.load_and_split()
 
 text_splitter = CharacterTextSplitter(chunk_size=250, chunk_overlap=0)
